@@ -2,6 +2,7 @@ package com.jewel.lib;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorRes;
