@@ -1,7 +1,9 @@
-package com.jewel.lib;
+package com.jewel.lib.java;
 
 import android.content.Context;
 import android.support.annotation.StringRes;
+
+import com.jewel.lib.android.CompatUtil;
 
 public final class StringFormat {
 

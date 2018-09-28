@@ -1,4 +1,4 @@
-package com.jewel.lib;
+package com.jewel.lib.android;
 
 import android.content.res.Resources;
 import android.support.annotation.ColorRes;

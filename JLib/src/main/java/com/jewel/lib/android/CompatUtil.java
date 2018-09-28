@@ -1,4 +1,4 @@
-package com.jewel.lib;
+package com.jewel.lib.android;
 
 import android.annotation.TargetApi;
 import android.content.Context;

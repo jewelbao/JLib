@@ -1,4 +1,4 @@
-package com.jewel.lib.recyclerView.decoration;
+package com.jewel.lib.android.recyclerView.decoration;
 
 import android.content.Context;
 import android.graphics.Rect;

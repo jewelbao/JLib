@@ -1,4 +1,4 @@
-package com.jewel.lib;
+package com.jewel.lib.android;
 
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -7,10 +7,10 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.RequiresApi;
 import android.widget.TextView;
 
-import static com.jewel.lib.Constant.DIRECTION_BOTTOM;
-import static com.jewel.lib.Constant.DIRECTION_LEFT;
-import static com.jewel.lib.Constant.DIRECTION_RIGHT;
-import static com.jewel.lib.Constant.DIRECTION_TOP;
+import static com.jewel.lib.android.Constant.DIRECTION_BOTTOM;
+import static com.jewel.lib.android.Constant.DIRECTION_LEFT;
+import static com.jewel.lib.android.Constant.DIRECTION_RIGHT;
+import static com.jewel.lib.android.Constant.DIRECTION_TOP;
 
 @SuppressWarnings("unused")
 public final class TextViewUtils {

@@ -1,4 +1,4 @@
-package com.jewel.lib.recyclerView;
+package com.jewel.lib.android.recyclerView;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -6,8 +6,8 @@ import android.support.annotation.ColorRes;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.jewel.lib.CompatUtil;
-import com.jewel.lib.recyclerView.decoration.HorizontalDividerItemDecoration;
+import com.jewel.lib.android.CompatUtil;
+import com.jewel.lib.android.recyclerView.decoration.HorizontalDividerItemDecoration;
 
 /**
  * @author Jewel
