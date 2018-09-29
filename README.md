@@ -13,11 +13,11 @@
 
 ## 在 build.gradle 中添加依赖
 ```
-implementation 'com.jewel.lib:JLib:1.0.3'
+implementation 'com.jewel.lib:JLib:1.0.5'
 ```
  或者
 ```
-implementation('com.jewel.lib:JLib:1.0.3') {
+implementation('com.jewel.lib:JLib:1.0.5') {
         exclude group: "com.android.support"
 }
 ```
@@ -40,7 +40,8 @@ implementation('com.jewel.lib:JLib:1.0.3') {
 ## Java ##
 
  - [DateUtils][6]--时间转换工具类,String-Long-Date互转
- - [StringFormat][7]--字符串格式化工具类，支持字符串资源文件
+ - [DigitUtil][7]--数字处理工具类,四舍五入，比例计算等等
+ - [StringFormat][8]--字符串格式化工具类，支持字符串资源文件
  - 陆续收录中...
 
 ----------
@@ -71,4 +72,5 @@ limitations under the License.
   [4]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/TextViewUtils.java
   [5]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/recyclerView/RecyclerViewUtil.java
   [6]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/DateUtilser/JLib/src/main/java/com/jewel/lib/android/recyclerView/RecyclerViewUtil.java
-  [7]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/StringFormat.java
+  [7]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/DigitUtil.java
+  [8]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/StringFormat.java
