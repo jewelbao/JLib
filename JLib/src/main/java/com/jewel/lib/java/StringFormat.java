@@ -5,6 +5,9 @@ import android.support.annotation.StringRes;
 
 import com.jewel.lib.android.CompatUtil;
 
+/**
+ * 字符串工具
+ */
 public final class StringFormat {
 
     private StringFormat() {
