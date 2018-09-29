@@ -9,6 +9,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * Snackbar需要引入support.design库，如果没引入会导致奔溃。
+ * 如果您添加JLib的依赖方式像这样：<br><code>
+ *     implementation('com.jewel.lib:JLib:xx.xx.xx') { <br>
+ *                exclude group: "com.android.support" <br>
+ *      }
+ * </code>，则需要自己依赖design库。
+ */
 @SuppressWarnings("unused")
 public final class SnackbarUtils {
     /**
