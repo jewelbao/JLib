@@ -9,7 +9,7 @@ import java.util.Locale;
 /**
  * 日期工具
  */
-public class DateUtils {
+public class DateUtil {
 
     /**
      * @param data       Date类型的时间

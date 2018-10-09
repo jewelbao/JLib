@@ -18,7 +18,7 @@ import android.widget.TextView;
  * </code>，则需要自己依赖design库。
  */
 @SuppressWarnings("unused")
-public final class SnackbarUtils {
+public final class SnackbarUtil {
     /**
      * 不自动消失的长提示
      */

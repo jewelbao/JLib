@@ -13,11 +13,11 @@ import static com.jewel.lib.android.Constant.DIRECTION_RIGHT;
 import static com.jewel.lib.android.Constant.DIRECTION_TOP;
 
 @SuppressWarnings("unused")
-public final class TextViewUtils {
+public final class TextViewUtil {
 
 
-    private TextViewUtils() {
-        throw new ExceptionInInitializerError("don't init TextViewUtils, ok!");
+    private TextViewUtil() {
+        throw new ExceptionInInitializerError("don't init TextViewUtil, ok!");
     }
 
     /**
