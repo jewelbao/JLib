@@ -8,6 +8,9 @@ import android.support.annotation.Nullable;
 /**
  * 数据源事件
  * @param <T>
+ * @author Jewel
+ * @version 1.0
+ * @since 2018/06/15
  */
 @SuppressWarnings("unused")
 public class DataSourceEvent<T> extends SingleLiveEvent<T> {

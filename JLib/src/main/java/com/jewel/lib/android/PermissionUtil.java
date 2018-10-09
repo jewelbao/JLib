@@ -10,6 +10,12 @@ import android.support.v4.content.PermissionChecker;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 系统权限请求封装
+ * @author Jewel
+ * @version 1.0
+ * @since 2018/09/25
+ */
 public final class PermissionUtil {
 
     private PermissionUtil() {

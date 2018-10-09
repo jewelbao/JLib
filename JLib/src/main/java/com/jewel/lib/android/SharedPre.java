@@ -28,7 +28,11 @@ import java.util.concurrent.ConcurrentMap;
  * Note that since writes are asynchronous, an in-flight write may be lost if the app is killed before the data has
  * been written to disk. If you require true 'commit' semantics then Remember is not for you.
  * <br><br>
- * Created by mlapadula on 12/23/14.
+ *
+ * @author mlapadula
+ * @modify jewel
+ * @version 1.0
+ * @since 2018/09/25
  */
 @SuppressWarnings("unused")
 public class SharedPre {

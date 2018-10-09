@@ -12,6 +12,12 @@ import static com.jewel.lib.android.Constant.DIRECTION_LEFT;
 import static com.jewel.lib.android.Constant.DIRECTION_RIGHT;
 import static com.jewel.lib.android.Constant.DIRECTION_TOP;
 
+/**
+ *
+ * @author Jewel
+ * @version 1.0
+ * @since 2018/06/15
+ */
 @SuppressWarnings("unused")
 public final class TextViewUtil {
 

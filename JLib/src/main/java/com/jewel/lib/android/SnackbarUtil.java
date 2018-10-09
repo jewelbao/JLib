@@ -16,6 +16,10 @@ import android.widget.TextView;
  *                exclude group: "com.android.support" <br>
  *      }
  * </code>，则需要自己依赖design库。
+ *
+ * @author Jewel
+ * @version 1.0
+ * @since 2018/09/15
  */
 @SuppressWarnings("unused")
 public final class SnackbarUtil {

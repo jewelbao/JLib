@@ -29,8 +29,8 @@ implementation('com.jewel.lib:JLib:1.0.5') {
 
  - [CompatUtil][1]--版本兼容类,处理不同版本差异方法
  - [PermissionUtil][2]--权限工具，6.0后的权限请求封装
- - [SnackbarUtils][3]--Snackbar工具，封装几种常用提示Snackbar
- - [TextViewUtils][4]--TextView相关操作封装
+ - [SnackbarUtil][3]--Snackbar工具，封装几种常用提示Snackbar
+ - [TextViewUtil][4]--TextView相关操作封装
  - [RecyclerViewUtil][5]--RecyclerView线性和网格列表的封装
  - 陆续收录中...
 
@@ -39,9 +39,9 @@ implementation('com.jewel.lib:JLib:1.0.5') {
 
 ## Java ##
 
- - [DateUtils][6]--时间转换工具类,String-Long-Date互转
+ - [DateUtil][6]--时间转换工具类,String-Long-Date互转
  - [DigitUtil][7]--数字处理工具类,四舍五入，比例计算等等
- - [StringFormat][8]--字符串格式化工具类，支持字符串资源文件
+ - [StringUtil][8]--字符串格式化工具类，支持字符串资源文件
  - 陆续收录中...
 
 ----------
@@ -68,9 +68,9 @@ limitations under the License.
 
   [1]: https://github.com/jewelbao/JLib/blob/master/JLib/src/main/java/com/jewel/lib/android/CompatUtil.java
   [2]: https://github.com/jewelbao/JLib/blob/master/JLib/src/main/java/com/jewel/lib/android/PermissionUtil.java
-  [3]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/SnackbarUtils.java
-  [4]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/TextViewUtils.java
+  [3]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/SnackbarUtil.java
+  [4]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/TextViewUtil.java
   [5]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/recyclerView/RecyclerViewUtil.java
   [6]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/DateUtilser/JLib/src/main/java/com/jewel/lib/android/recyclerView/RecyclerViewUtil.java
   [7]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/DigitUtil.java
-  [8]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/StringFormat.java
+  [8]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/java/StringUtil.java
