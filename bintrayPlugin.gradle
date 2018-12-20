@@ -61,6 +61,6 @@ publish {
     groupId = projectGroupId //jcenter上的路径
     artifactId = projectArtifactId//项目名称
     publishVersion = projectVersionName //版本号
-    desc = 'A tool for android'//描述，不重要
+    desc = '好坑老是发布失败'//描述，不重要
     website = projectSiteUrl//项目主页
 }
