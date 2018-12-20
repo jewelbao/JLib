@@ -1,0 +1,117 @@
+// add plugin
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+Properties properties = new Properties()
+File localProFile = project.file("local.properties")
+if (localProFile.exists()) {
+    properties.load(localProFile.newDataInputStream())
+}
+File projectProFile = project.file("project.properties")
+if (projectProFile.exists()) {
+    properties.load(projectProFile.newDataInputStream())
+}
+
+def projectLibName = properties.getProperty("project.name")
+def projectMavenName = properties.getProperty("project.maven")
+def projectPackaging = properties.getProperty("project.packaging")
+def projectGroupId = properties.getProperty("project.groupId")
+def projectArtifactId = properties.getProperty("project.artifactId")
+def projectVersionName = android.defaultConfig.versionName
+def projectSiteUrl = properties.getProperty("project.siteUrl")
+def projectGitUrl = properties.getProperty("project.gitUrl")
+def projectIssues = properties.getProperty("project.issues")
+def developerName = properties.getProperty("dev.name")
+def developerEmail = properties.getProperty("dev.email")
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+    failOnError false
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+group = projectGroupId
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging projectPackaging
+            groupId projectGroupId //自己定义的组名
+            artifactId projectArtifactId
+
+            name projectLibName
+            description 'Android Util'
+            url projectSiteUrl
+            inceptionYear '2018'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                connection projectGitUrl
+                url projectSiteUrl
+
+            }
+            developers {
+                developer {
+                    name developerName
+                    email developerEmail
+                }
+            }
+        }
+
+    }
+}
+
+// Bintray
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    publish = true
+    configurations = ['archives']
+    pkg {
+        //填入 bintray 上对应的 package 信息
+        repo = projectMavenName
+        name = projectLibName
+        vcsUrl = projectGitUrl
+        websiteUrl = projectSiteUrl
+        licenses = ['Apache-2.0']
+        issueTrackerUrl = projectIssues
+        publicDownloadNumbers = true
+        version {
+            name = projectVersionName
+            desc = projectVersionName + ' release'
+            vcsTag = projectVersionName
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+task findConventions << {
+    println project.getConvention()
+}

@@ -1,66 +1,66 @@
-apply plugin: 'com.novoda.bintray-release'
-
-Properties properties = new Properties()
-File localProFile = project.file("local.properties")
-if (localProFile.exists()) {
-    properties.load(localProFile.newDataInputStream())
-}
-File projectProFile = project.file("project.properties")
-if (projectProFile.exists()) {
-    properties.load(projectProFile.newDataInputStream())
-}
-
-def projectMavenName = properties.getProperty("project.maven")
-def projectGroupId = properties.getProperty("project.groupId")
-def projectArtifactId = properties.getProperty("project.artifactId")
-def projectVersionName = android.defaultConfig.versionName
-def projectSiteUrl = properties.getProperty("project.siteUrl")
-def developerName = properties.getProperty("dev.name")
-
-group = projectGroupId
-
-//生成源文件
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-//生成Javadoc文档
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath = files(android.bootClasspath)
-    destinationDir = file("../javadoc/")
-    options.encoding = "utf-8"
-    options.charSet = "utf-8"
-    failOnError false
-}
-
-//文档打包成jar
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-//上传到JCenter所需要的源码文件
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-//解决 JavaDoc 中文注释生成失败的问题
-tasks.withType(Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
-}
-
-//发布到 Bintray
-publish {
-    repoName = projectMavenName//远程仓库名字,不指明，默认是上传到maven
-    userOrg = developerName//bintray.com的用户名
-    groupId = projectGroupId //jcenter上的路径
-    artifactId = projectArtifactId//项目名称
-    publishVersion = projectVersionName //版本号
-    desc = '好坑老是发布失败'//描述，不重要
-    website = projectSiteUrl//项目主页
-}
+//apply plugin: 'com.novoda.bintray-release'
+//
+//Properties properties = new Properties()
+//File localProFile = project.file("local.properties")
+//if (localProFile.exists()) {
+//    properties.load(localProFile.newDataInputStream())
+//}
+//File projectProFile = project.file("project.properties")
+//if (projectProFile.exists()) {
+//    properties.load(projectProFile.newDataInputStream())
+//}
+//
+//def projectMavenName = properties.getProperty("project.maven")
+//def projectGroupId = properties.getProperty("project.groupId")
+//def projectArtifactId = properties.getProperty("project.artifactId")
+//def projectVersionName = android.defaultConfig.versionName
+//def projectSiteUrl = properties.getProperty("project.siteUrl")
+//def developerName = properties.getProperty("dev.name")
+//
+//group = projectGroupId
+//
+////生成源文件
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+////生成Javadoc文档
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath = files(android.bootClasspath)
+//    destinationDir = file("../javadoc/")
+//    options.encoding = "utf-8"
+//    options.charSet = "utf-8"
+//    failOnError false
+//}
+//
+////文档打包成jar
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+////上传到JCenter所需要的源码文件
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
+//
+////解决 JavaDoc 中文注释生成失败的问题
+//tasks.withType(Javadoc) {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}
+//
+////发布到 Bintray
+//publish {
+//    repoName = projectMavenName//远程仓库名字,不指明，默认是上传到maven
+//    userOrg = developerName//bintray.com的用户名
+//    groupId = projectGroupId //jcenter上的路径
+//    artifactId = projectArtifactId//项目名称
+//    publishVersion = projectVersionName //版本号
+//    desc = '好坑老是发布失败'//描述，不重要
+//    website = projectSiteUrl//项目主页
+//}

@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 12
-        versionName "1.0.11"
+        versionCode 13
+        versionName "1.0.12"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -35,4 +35,4 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 }
 
-apply from: "../bintrayPlugin.gradle"
+apply from: "../bintrayPlugin2.gradle"
