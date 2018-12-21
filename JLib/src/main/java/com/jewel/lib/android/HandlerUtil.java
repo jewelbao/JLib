@@ -19,8 +19,6 @@ import android.os.Handler;
 import android.os.Looper;
 
 /**
- * Handler工具，简化你的代码
- *
  * @author Jewel
  * @version 1.0
  * @since 2018/06/15

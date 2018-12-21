@@ -6,8 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 /**
- * 数据源事件
- * @param <T>
  * @author Jewel
  * @version 1.0
  * @since 2018/06/15
@@ -27,7 +25,7 @@ public class DataSourceEvent<T> extends SingleLiveEvent<T> {
     }
 
     /**
-     * 将数据源定义为正常数据事件并发送通知给订阅者
+     * Define the data source as a normal data event and send a notification to the subscriber
      */
     public void setData(@NonNull T data) {
         this.event = EVENT_SUCCESS;
@@ -35,7 +33,7 @@ public class DataSourceEvent<T> extends SingleLiveEvent<T> {
     }
 
     /**
-     * 将数据源定义为空数据事件并发送通知给订阅者
+     * Define a data source as an empty data event and send a notification to the subscriber
      */
     public void setEmpty(){
         this.event = EVENT_EMPTY;
@@ -43,7 +41,7 @@ public class DataSourceEvent<T> extends SingleLiveEvent<T> {
     }
 
     /**
-     * 将数据源定义为异常数据事件并发送通知给订阅者
+     * Define the data source as an exception data event and send a notification to the subscribe
      */
     public void setError(Throwable throwable) {
         this.event = EVENT_ERROR;
@@ -52,9 +50,9 @@ public class DataSourceEvent<T> extends SingleLiveEvent<T> {
     }
 
     /**
-     * 订阅获取数据源事件
-     * @param owner 上下文
-     * @param observer 数据源观察者
+     * Subscribe to get data source events
+     * @param owner Context
+     * @param observer Data source observer
      */
     public void observe(LifecycleOwner owner, final DataSourceObserver<T> observer) {
        super.observe(owner, new Observer<T>() {
@@ -76,24 +74,23 @@ public class DataSourceEvent<T> extends SingleLiveEvent<T> {
     }
 
     /**
-     * 数据源观察者接口
-     * @param <T>
+     * Data source observer interface
      */
     public interface DataSourceObserver<T> {
         /**
-         * 获取到正常业务数据。当{@link DataSourceEvent#setData(Object)}或者{@link DataSourceEvent#setValue(Object)}不为null被调用时，此事件触发。
-         * @param data {@link DataSourceEvent#setData(Object)}设置进去的数据
+         * Get normal business data.This event fires when {@link DataSourceEvent#setData(Object)} or {@link DataSourceEvent#setValue(Object)} (not null) is called.
+         * @param data {@link DataSourceEvent#setData(Object)}Set the data in
          */
         void onGetDataSuccess(T data);
 
         /**
-         * 获取到空数据。当{@link DataSourceEvent#setEmpty()}或者{@link DataSourceEvent#setValue(Object)}为null被调用时，此事件触发。
+         * Get empty data. This event fires when {@link DataSourceEvent#setEmpty()} or {@link DataSourceEvent#setValue(Object)} (which is null) is called.
          */
         void onGetEmptyData();
 
         /**
-         * 获取数据发生异常。当{@link DataSourceEvent#setError(Throwable)}被调用时，此事件触发。
-         * @param throwable {@link DataSourceEvent#setError(Throwable)}设置进去的数据
+         * An exception occurred in getting the data. This event fires when {@link DataSourceEvent#setError(Throwable)} is called.
+         * @param throwable {@link DataSourceEvent#setError(Throwable)}Set the data in
          */
         void onGetDataError(Throwable throwable);
     }

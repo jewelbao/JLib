@@ -15,7 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * 自定义RecyclerView的Divider
+ * Custom RecyclerView Divider
  * @author Kevin
  * @version 1.0
  * @since 2015/9/25
@@ -136,66 +136,61 @@ abstract class RecycleViewDivider extends RecyclerView.ItemDecoration{
 	protected abstract void setItemOffsets(Rect outRect, int position, RecyclerView parent);
 
 	/**
-	 * Divider可视化控制接口
+	 * Divider Visibility Provider
 	 */
 	public interface VisibilityProvider {
 		/**
-		 * 若Divider可隐藏,返回true
 		 * @param position Divider position
 		 * @param parent RecyclerView
-		 * @return 若Divider可隐藏,返回true
+		 * @return Return true if Divider can be hidden
 		 */
 		boolean shouldHideDivider(int position, RecyclerView parent);
 	}
 
 	/**
-	 * Divider画笔控制接口
+	 * Divider brush control interface
 	 */
 	public interface PaintProvider {
 		/**
-		 * 返回Divider画笔
 		 * @param position Divider position
 		 * @param parent RecyclerView
-		 * @return 返回Divider画笔
+		 * @return Return to Divider Brush
 		 */
 		Paint dividerPaint(int position, RecyclerView parent);
 	}
 
 	/**
-	 * Divider颜色控制接口
+	 * Divider color control interface
 	 */
 	public interface ColorProvider {
 		/**
-		 * 返回Divider颜色值
 		 * @param position Divider position
 		 * @param parent RecyclerView
-		 * @return 返回Divider颜色值
+		 * @return Returns the Divider color value
 		 */
 		int dividerColor(int position, RecyclerView parent);
 	}
 
 	/**
-	 * Divider Drawable控制接口
+	 * Divider Drawable control interface
 	 */
 	public interface DrawableProvider {
 		/**
-		 * 返回Divider Drawable实例
 		 * @param position Divider position
 		 * @param parent RecyclerView
-		 * @return 返回Divider Drawable实例
+		 * @return Return to the Divider Drawable instance
 		 */
 		Drawable drawableProvider(int position, RecyclerView parent);
 	}
 
 	/**
-	 * Divider Drawable控制接口
+	 * Divider Drawable control interface
 	 */
 	public interface SizeProvider {
 		/**
-		 * 返回Divider Size
 		 * @param position Divider position
 		 * @param parent RecyclerView
-		 * @return 返回Divider Size
+		 * @return Return Divider Size
 		 */
 		int dividerSize(int position, RecyclerView parent);
 	}

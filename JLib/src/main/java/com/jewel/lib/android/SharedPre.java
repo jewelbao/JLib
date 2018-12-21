@@ -12,8 +12,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * SharedPreferences代替类，解决存储过程无法即存即取的问题。可任意时刻存储数据，任意时刻读取新数据。<br><br>
- * 需要在Application级别下onCreate()方法初始化{@link SharedPre#init(Context, String)}<br><br>
+ * SharedPreferences replaces the class and solves the problem that the stored procedure cannot be saved immediately. Data can be stored at any time and new data can be read at any time. <br><br>
+ * Need to initialize the onCreate() method at the Application level {@link SharedPre#init(Context, String)}<br><br>
  * An in-memory data store backed by shared preferences. This is a key-value store with a few important properties:
  * <br><br>
  * 1) Speed. Everything is stored in-memory so reads can happen on the UI thread. Writes and deletes happen
@@ -29,8 +29,7 @@ import java.util.concurrent.ConcurrentMap;
  * been written to disk. If you require true 'commit' semantics then Remember is not for you.
  * <br><br>
  *
- * @author mlapadula
- * @modify jewel
+ * @author mlapadula modify by jewel
  * @version 1.0
  * @since 2018/09/25
  */

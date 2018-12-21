@@ -6,9 +6,6 @@ import android.support.annotation.StringRes;
 
 import com.jewel.lib.android.CompatUtil;
 
-/**
- * 字符串工具
- */
 public final class StringUtil {
 
     private StringUtil() {
@@ -16,28 +13,29 @@ public final class StringUtil {
     }
 
     /**
-     * 从字符串资源中获取字符串
+     * Get a string from a string resource
      */
     public static String get(Context context, @StringRes int stringRes) {
         return CompatUtil.getString(context, stringRes);
     }
 
     /**
-     * 从字符串资源中获取特殊字符串并格式化
+     * Get a special string from a string resource and format it
      */
     public static String get(Context context, @StringRes int stringRes, Object... args) {
         return String.format(CompatUtil.getString(context, stringRes), args);
     }
 
     /**
-     * 获取格式化后的字符串。当source未包含"%s"时，将在source末尾添加"%s"
-     * @param source 源字符串
-     * @param arg 格式化参数
-     * @return 格式化后的字符串
+     * Get the formatted string. When the source does not contain "%s", "%s" will be added at the end of the source
+     *
+     * @param source Source string
+     * @param arg    Formatting parameter
+     * @return Formatted string
      */
     public static String get(String source, Object arg) {
-        if(arg != null) {
-            if(!source.contains("%s")) {
+        if (arg != null) {
+            if (!source.contains("%s")) {
                 source = source + "%s";
             }
         }
@@ -45,14 +43,15 @@ public final class StringUtil {
     }
 
     /**
-     * 获取格式化后的字符串。当source未包含"%s"时，将根据args添加同等数的"%s"
-     * @param source 源字符串
-     * @param args 格式化参数
-     * @return 格式化后的字符串
+     * Get the formatted string. When source does not contain "%s", an equal number of "%s" will be added according to args
+     *
+     * @param source source string
+     * @param args   formatting parameters
+     * @return formatted string
      */
     public static String get(String source, Object... args) {
-        if(args != null && args.length > 0) {
-            if(!source.contains("%s")) {
+        if (args != null && args.length > 0) {
+            if (!source.contains("%s")) {
                 source = source + getFormatBy(args.length);
             }
         }
@@ -60,13 +59,12 @@ public final class StringUtil {
     }
 
     /**
-     * 根据count得到相同数的“%s”字符串<br>
-     *     <code>
-     *         getFormatBy(1) == "%s"<br>
-     *         getFormatBy(3) ==  "%s%s%s"
-     *     </code>
-     * @param count “%s”个数
-     * @return “%s”* count
+     * Get the same number of "%s" strings according to count<br>
+     * getFormatBy(1) == "%s"<br>
+     * getFormatBy(3) == "%s%s%s"
+     *
+     * @param count "%s" number
+     * @return  "%s" * count
      */
     public static String getFormatBy(@IntRange(from = 1) int count) {
         StringBuilder format = new StringBuilder(1);

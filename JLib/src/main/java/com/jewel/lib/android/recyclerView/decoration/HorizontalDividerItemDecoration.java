@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * 水平方向的Divider
+ * Horizontal Divider
  * @author Kevin
  * @version 1.0
  * @since 2015/9/25

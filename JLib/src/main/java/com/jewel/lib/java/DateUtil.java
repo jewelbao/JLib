@@ -12,8 +12,8 @@ import java.util.Locale;
 public class DateUtil {
 
     /**
-     * @param data       Date类型的时间
-     * @param formatType 格式为yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
+     * @param data       Date type time
+     * @param formatType The format is yyyy-MM-dd HH:mm:ss//yyyy MM month dd day HH hour mm ss seconds
      */
     public static String dateToString(Date data, String formatType) {
         return new SimpleDateFormat(formatType).format(data);
@@ -21,18 +21,18 @@ public class DateUtil {
 
     /**
      *
-     * @param currentTime 要转换的long类型的时间
-     * @param formatType 格式为yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
+     * @param currentTime The time of the long type to be converted
+     * @param formatType The format is yyyy-MM-dd HH:mm:ss//yyyy MM month dd day HH hour mm ss seconds
      */
     public static String longToString(long currentTime, String formatType) {
-        Date date = longToDate(currentTime, formatType); // long类型转成Date类型
+        Date date = longToDate(currentTime, formatType); // Long type converted to Date type
         return dateToString(date, formatType);
     }
 
     /**
      *
-     * @param strTime 要转换的string类型的时间，strTime的时间格式必须要与formatType的时间格式相同
-     * @param formatType 要转换的格式yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
+     * @param strTime The time of the string type to be converted, the time format of strTime must be the same as the time format of formatType
+     * @param formatType The format to be converted yyyy-MM-dd HH:mm:ss//yyyy year MM month dd day HH hour mm minute ss seconds
      */
     public static Date stringToDate(String strTime, String formatType)  {
         SimpleDateFormat formatter = new SimpleDateFormat(formatType);
@@ -47,22 +47,22 @@ public class DateUtil {
 
     /**
      *
-     * @param currentTime 要转换的long类型的时间
-     * @param formatType 要转换的时间格式yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
+     * @param currentTime The time of the long type to be converted
+     * @param formatType Time format to be converted yyyy-MM-dd HH:mm:ss//yyyy year MM month dd day HH hour mm minute ss seconds
      */
     public static Date longToDate(long currentTime, String formatType)  {
-        Date dateOld = new Date(currentTime); // 根据long类型的毫秒数生命一个date类型的时间
-        String sDateTime = dateToString(dateOld, formatType); // 把date类型的时间转换为string
+        Date dateOld = new Date(currentTime); // The time of a date type according to the number of milliseconds of the long type
+        String sDateTime = dateToString(dateOld, formatType); // Convert date type to string
         return stringToDate(sDateTime, formatType);
     }
 
     /**
      *
-     * @param strTime 要转换的String类型的时间
-     * @param formatType 要转换的时间格式yyyy-MM-dd HH:mm:ss//yyyy年MM月dd日 HH时mm分ss秒
+     * @param strTime The time of the String type to be converted
+     * @param formatType Time format to be converted yyyy-MM-dd HH:mm:ss//yyyy year MM month dd day HH hour mm minute ss seconds
      */
     public static long stringToLong(String strTime, String formatType) {
-        Date date = stringToDate(strTime, formatType); // String类型转成date类型
+        Date date = stringToDate(strTime, formatType); // String type into date type
         if (date == null) {
             return 0;
         } else {
@@ -71,14 +71,14 @@ public class DateUtil {
     }
 
     /**
-     * @param date 要转换的date类型的时间
+     * @param date The time of the Date type to be converted
      */
     public static long dateToLong(Date date) {
         return date.getTime();
     }
 
     /**
-     * @param timeMs 要转换为 %d:%02d:%02d 或 %02d:%02d String类型 的时间
+     * @param timeMs Time to convert to %d:%02d:%02d or %02d:%02d String type
      */
     public static String timeToString(long timeMs) {
         if (timeMs <= 0 || timeMs >= 24 * 60 * 60 * 1000) {

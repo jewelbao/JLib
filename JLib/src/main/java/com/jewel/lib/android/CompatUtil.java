@@ -1,8 +1,6 @@
 package com.jewel.lib.android;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorRes;
@@ -23,9 +21,6 @@ import android.widget.TextView;
 @SuppressWarnings("ALL")
 public class CompatUtil {
 
-    /**
-     * ViewPager页面监听
-     */
     public static void setOnPageChangeListener(ViewPager v, ViewPager.OnPageChangeListener p) {
         if (isBelowVersion(23)) {
             v.setOnPageChangeListener(p);
@@ -34,7 +29,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static void setBackground(View view, Drawable drawable) {
         if (isBelowVersion(16)) {
             view.setBackgroundDrawable(drawable);
@@ -43,7 +37,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static void setBackground(View view, @DrawableRes int drawableRes) {
         if (isBelowVersion(16)) {
             view.setBackgroundDrawable(getDrawable(view.getContext(), drawableRes));
@@ -52,7 +45,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     public static void setTextAppearance(TextView view, @StyleRes int appearanceRes) {
         if (isBelowVersion(23)) {
             view.setTextAppearance(view.getContext(), appearanceRes);
@@ -61,7 +53,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public static Drawable getDrawable(Context context, @DrawableRes int drawableRes) {
         if (isBelowVersion(21)) {
             return context.getResources().getDrawable(drawableRes);
@@ -70,7 +61,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public static String getString(Context context, @StringRes int stringRes) {
         if (isBelowVersion(21)) {
             return context.getResources().getString(stringRes);
@@ -79,7 +69,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     public static int getColor(Context context, @ColorRes int colorRes) {
         if (isBelowVersion(23)) {
             return context.getResources().getColor(colorRes);
@@ -88,7 +77,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static void setPadding(TextView view, int left, int top, int right, int bottom) {
         if (isBelowVersion(15)) {
             view.setPaddingRelative(left, top, right, bottom);
@@ -97,7 +85,6 @@ public class CompatUtil {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static void clearBackground(View... views) {
         if (views != null) {
             for (View view : views) {
@@ -118,7 +105,7 @@ public class CompatUtil {
     }
 
     /**
-     * 编译版本小于version的版本
+     * Compile version is less than version
      */
     public static boolean isBelowVersion(int version) {
         if (Build.VERSION.SDK_INT < version) {

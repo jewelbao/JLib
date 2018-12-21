@@ -9,7 +9,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * 加载事件
  * @author Jewel
  * @version 1.0
  * @since 2018/06/15
@@ -38,9 +37,9 @@ public class LoadingEvent extends SingleLiveEvent<Integer> {
     }
 
     /**
-     * 订阅加载事件
-     * @param owner 上下文
-     * @param observer 加载事件观察者
+     * Subscribe to the load event
+     * @param owner Context
+     * @param observer Load event observer
      */
     public void observe(LifecycleOwner owner, final LoadingObserver observer) {
         super.observe(owner, new Observer<Integer>() {
@@ -67,23 +66,23 @@ public class LoadingEvent extends SingleLiveEvent<Integer> {
     }
 
     /**
-     * 加载事件观察者
+     * Load event observer
      */
     public interface LoadingObserver {
         /**
-         * 重置加载事件，当{@link LoadingEvent#setValue(Integer)}值为{@link #EVENT_NORMAL}时触发。
+         * Resets the load event and fires when the {@link LoadingEvent#setValue(Integer)} value is {@link #EVENT_NORMAL}.
          */
         void onLoadReset();
         /**
-         * 加载中事件，当{@link LoadingEvent#setValue(Integer)}值为{@link #EVENT_LOADING}时触发。
+         * The load event is fired when the {@link LoadingEvent#setValue(Integer)} value is {@link #EVENT_LOADING}.
          */
         void onLoading();
         /**
-         * 取消加载事件，当{@link LoadingEvent#setValue(Integer)}值为{@link #EVENT_LOAD_CANCEL}时触发。
+         * The unload event is fired when the {@link LoadingEvent#setValue(Integer)} value is {@link #EVENT_LOAD_CANCEL}.
          */
         void onLoadCancel();
         /**
-         * 加载完成事件，当{@link LoadingEvent#setValue(Integer)}值为{@link #EVENT_LOADED_FINISH}时触发。
+         * The load completion event is fired when the {@link LoadingEvent#setValue(Integer)} value is {@link #EVENT_LOADED_FINISH}.
          */
         void onLoadedComplete();
     }

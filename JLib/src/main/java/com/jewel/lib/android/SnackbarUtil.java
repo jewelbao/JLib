@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Snackbar需要引入support.design库，如果没引入会导致奔溃。
- * 如果您添加JLib的依赖方式像这样：<br><code>
- *     implementation('com.jewel.lib:JLib:xx.xx.xx') { <br>
- *                exclude group: "com.android.support" <br>
- *      }
- * </code>，则需要自己依赖design库。
+ * Snackbar needs to introduce the support.design library, which will crash if not introduced.
+ * If you add JLib dependencies like this:<br>
+ * <code>implementation('com.jewel.lib:JLib:xx.xx.xx') { <br>
+ *          exclude group: "com.android.support" <br>
+ *    } </code> <br>
+ * you need to rely on the design library yourself.
  *
  * @author Jewel
  * @version 1.0
@@ -24,37 +24,37 @@ import android.widget.TextView;
 @SuppressWarnings("unused")
 public final class SnackbarUtil {
     /**
-     * 不自动消失的长提示
+     * Long prompts that don't disappear automatically
      */
     public static void showIndefinite(View view, String text) {
         show(view, -1, text, -1, Snackbar.LENGTH_INDEFINITE);
     }
 
     /**
-     * 2.5秒后消失的长提示
+     * Long reminder disappearing after 2.5 seconds
      */
     public static void showLong(View view, String text) {
         show(view, -1, text, -1, Snackbar.LENGTH_LONG);
     }
 
     /**
-     * 1.5秒后消失的短提示
+     * Short tips that disappear after 1.5 seconds
      */
     public static void showShort(View view, String text) {
         show(view, -1, text, -1, Snackbar.LENGTH_SHORT);
     }
 
     /**
-     * 自定义显示时间的提示
+     * Customize the prompt to display time
      *
-     * @param duration 毫秒。
+     * @param duration millisecond.
      */
     public static void showDuration(View view, String text, int duration) {
         show(view, -1, text, -1, duration);
     }
 
     /**
-     * 点击按钮隐藏提示
+     * Click the button to hide the prompt
      */
     public static void showAction(View view, String text) {
         show(view, -1, text, -1, "隐藏", -1, new View.OnClickListener() {
@@ -66,21 +66,21 @@ public final class SnackbarUtil {
     }
 
     /**
-     * 点击按钮隐藏提示
+     * Click the button to hide the prompt
      *
-     * @param action         按钮文本
-     * @param actionListener 按钮事件
+     * @param action         Button text
+     * @param actionListener Button event
      */
     public static void showAction(View view, String text, String action, @NonNull View.OnClickListener actionListener) {
         show(view, -1, text, -1, action, -1, actionListener, Snackbar.LENGTH_INDEFINITE);
     }
 
     /**
-     * 自定义样式和显示时间的提示
+     * Tips for custom styles and display time
      *
-     * @param duration  毫秒。
-     * @param textColor 提示文本颜色
-     * @param bgColor   背景颜色
+     * @param duration  millisecond.
+     * @param textColor Prompt text color
+     * @param bgColor   background color
      */
     public static void show(View view, @ColorRes int bgColor, String text, @ColorRes int textColor, int duration) {
         show(view, bgColor, text, textColor, null, -1, null, duration);
@@ -88,11 +88,11 @@ public final class SnackbarUtil {
 
 
     /**
-     * 自定义样式和显示时间的提示
+     * Tips for custom styles and display time
      *
-     * @param duration  毫秒。
-     * @param textColor 提示文本颜色
-     * @param bgColor   背景颜色
+     * @param duration  millisecond.
+     * @param textColor Prompt text color
+     * @param bgColor   background color
      */
     public static void show(View view, @ColorRes int bgColor, @NonNull String text, @ColorRes int textColor, @Nullable String action, @ColorRes int actionColor, View.OnClickListener actionListener, int duration) {
         Resources resources = view.getResources();

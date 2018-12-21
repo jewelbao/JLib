@@ -10,10 +10,10 @@ import java.io.IOException;
 public final class FileUtil {
 
     /**
-     * 创建文件，如果该文件的目录不存在，则创建上级目录
+     * Create a file, if the directory of the file does not exist, create a superior directory
      *
-     * @param filePath 文件路径
-     * @return 返回true表示文件创建成功或已存在。
+     * @param filePath file path
+     * @return Returning true indicates that the file was created successfully or already exists.
      */
     public static boolean createFile(String filePath) {
         File file = new File(filePath);
@@ -41,10 +41,10 @@ public final class FileUtil {
     }
 
     /**
-     * 创建目录，如果该目录存在上级目录，则同样创建
+     * Create a directory, if the directory has a parent directory, create the same
      *
-     * @param dirPath 目录路径
-     * @return 返回true表示创建成功
+     * @param dirPath Directory path
+     * @return Return true to create a successful one.
      */
     public static boolean makeDirs(String dirPath) {
         File folder = new File(dirPath);
@@ -58,10 +58,10 @@ public final class FileUtil {
     }
 
     /**
-     * 删除文件，如果该文件为目录且存在下级目录或文件，则会删除失败
+     * Delete the file, if the file is a directory and there is a subordinate directory or file, the deletion will fail
      *
-     * @param filePath 文件路径
-     * @return 返回true表示文件删除成功或文件不存在。
+     * @param filePath file path
+     * @return Returning true indicates that the file was deleted successfully or the file does not exist.
      */
     public static boolean delete(String filePath) {
         File file = new File(filePath);
@@ -76,10 +76,10 @@ public final class FileUtil {
 
 
     /**
-     * 谨慎操作！强制删除文件，如果该文件为目录且存在下级目录或文件，将会一起删除
+     * Be cautious! Force the file to be deleted. If the file is a directory and there is a subordinate directory or file, it will be deleted together.
      *
-     * @param filePath 文件路径
-     * @return 返回true表示文件或该文件目录下所有文件删除成功
+     * @param filePath file path
+     * @return Return true to indicate that the file or all files in the file directory are deleted successfully.
      */
     public static boolean deleteForce(String filePath) {
         File file = new File(filePath);
@@ -102,11 +102,11 @@ public final class FileUtil {
     }
 
     /**
-     * 重命名
+     * Rename file
      *
-     * @param filePath 文件路径
-     * @param newName  新文件名
-     * @return 返回true表示文件命名成功。
+     * @param filePath file path
+     * @param newName  New file name
+     * @return Returning true indicates that the file was named successfully.
      */
     public static boolean rename(String filePath, String newName) {
         File file = new File(filePath);

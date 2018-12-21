@@ -8,8 +8,9 @@ import java.math.BigDecimal;
 public class DigitUtil {
 
     /**
-     * 根据count值得到1(count个数的0)的数。例如count为2，则得到100，count为1则得到10，count小于0则得到1
-     * @param count 1后补增的0个数
+     * A number of 1 (count of 0) is obtained from the count value. For example, if count is 2, then 100 is obtained, count is 1 and 10 is obtained, and count is less than 0, and 1 is obtained.
+     *
+     * @param count 0 number after 1 increase
      * @return long
      */
     public static long zeroCountToNum(int count) {
@@ -24,32 +25,33 @@ public class DigitUtil {
     }
 
     /**
-     * 获取比例
-     * @param current 分子
-     * @param max 分母
-     * @return 比例（0-100）
+     * Acquisition ratio
+     *
+     * @param current molecule
+     * @param max     Denominator
+     * @return Proportion (0-100)
      */
     public static int percent(long current, long max) {
         return (int) (halfUp((float) current / max, 2) * zeroCountToNum(2));
     }
 
     /**
-     * 总是返回大于等于value的值，负数谨慎使用。
+     * Always return a value greater than or equal to value, and use negative numbers with caution.
      *
-     * @param value    需要转换的数值
-     * @param newScale 小数点保留位数
-     * @return 小数点后newScale+1位后若有大于0的值，则(负数舍弃newScale后几位，正数newScale位直接+1)。例如。<br><code>
-     * alwaysUp(10.11001101f, 2) == 10.12 <br>
-     * alwaysUp(10.11001101f, 3) == 10.111 <br>
-     * alwaysUp(-10.11001101f, 2) == -10.11 <br>
-     * </code>
+     * @param value    The value to be converted
+     * @param newScale Decimal point reserved
+     * @return If there is a value greater than 0 after the newScale+1 bit after the decimal point, then (the negative number discards the new digit after the newScale, the positive newScale bit is directly +1). E.g.
+     * alwaysUp(10.11001101f, 2) == 10.12
+     * alwaysUp(10.11001101f, 3) == 10.111
+     * alwaysUp(-10.11001101f, 2) == -10.11
+     *
      */
     public static float alwaysUp(float value, int newScale) {
         return getBigDecimal(value, newScale, BigDecimal.ROUND_CEILING);
     }
 
     /**
-     * 总是返回大于等于value的值，负数谨慎使用。
+     * Always return a value greater than or equal to value, and use negative numbers with caution.
      *
      * @see #alwaysUp(float, int)
      */
@@ -58,25 +60,25 @@ public class DigitUtil {
     }
 
     /**
-     * 获取四舍五入的值
+     * Get rounded values
      *
-     * @param value    需要转换的数值
-     * @param newScale 小数点保留位数
-     * @return 四舍五入后的值。用例结果：<br><code>
-     * 原值：10.105    截取小数点位数：1   结果：10.1<br>
-     * 原值：10.105    截取小数点位数：2   结果：10.11<br>
-     * 原值：10.105    截取小数点位数：3   结果：10.105<br>
-     * 原值：-10.105    截取小数点位数：1   结果：-10.1<br>
-     * 原值：-10.105    截取小数点位数：2   结果：-10.11<br>
-     * 原值：-10.105    截取小数点位数：3   结果：-10.105<br>
-     * </code>
+     * @param value    The value to be converted
+     * @param newScale Decimal point reserved
+     * @return The value after rounding. Use case results:
+     * Original value: 10.105 Intercept the number of decimal places: 1 Result: 10.1<br>
+     * Original value: 10.105 Intercept the number of decimal places: 2 Result: 10.11<br>
+     * Original value: 10.105 Intercept the number of decimal places: 3 Results: 10.105<br>
+     * Original value: -10.105 Intercept the number of decimal places: 1 Result: -10.1<br>
+     * Original value: -10.105 Intercept the number of decimal places: 2 Results: -10.11<br>
+     * Original value: -10.105 Intercept the number of decimal places: 3 Results: -10.105<br>
+     *
      */
     public static float halfUp(float value, int newScale) {
         return getBigDecimal(value, newScale, BigDecimal.ROUND_HALF_UP);
     }
 
     /**
-     * 获取四舍五入的值
+     * Get rounded values
      *
      * @see #halfUp(float, int)
      */

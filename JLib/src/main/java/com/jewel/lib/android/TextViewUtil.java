@@ -1,5 +1,6 @@
 package com.jewel.lib.android;
 
+import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -27,11 +28,11 @@ public final class TextViewUtil {
     }
 
     /**
-     * @param direction 显示的位置，{@link Constant#DIRECTION_LEFT}、{@link Constant#DIRECTION_TOP}、{@link Constant#DIRECTION_RIGHT}、{@link Constant#DIRECTION_BOTTOM}
-     * @param left      要显示的drawable起始x坐标
-     * @param top       要显示的drawable起始y坐标
-     * @param right     要显示的drawable终点x坐标
-     * @param bottom    要显示的drawable终点y坐标
+     * @param direction The location shown, {@link Constant#DIRECTION_LEFT}, {@link Constant#DIRECTION_TOP}, {@link Constant#DIRECTION_RIGHT}, {@link Constant#DIRECTION_BOTTOM}
+     * @param left      The drawable x coordinate of the drawable to be displayed
+     * @param top       The drawable y coordinate of the drawable to be displayed
+     * @param right     The drawable end point x coordinate to display
+     * @param bottom    The drawable end point y coordinate to display
      */
     public static void setDrawableCompat(TextView view, @DrawableRes int drawableId, @Constant.Direction int direction, int left, int top, int right, int bottom) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -42,11 +43,11 @@ public final class TextViewUtil {
     }
 
     /**
-     * 将Drawables设置为显示在文本的左侧，上方，右侧和下方。
+     * Set Drawables to display on the left, top, right, and bottom of the text.
      *
-     * @param direction      显示的位置，{@link Constant#DIRECTION_LEFT}、{@link Constant#DIRECTION_TOP}、{@link Constant#DIRECTION_RIGHT}、{@link Constant#DIRECTION_BOTTOM}
-     * @param drawableWidth  要显示的drawable宽度
-     * @param drawableHeight 要显示的drawable高度
+     * @param direction      The location shown, {@link Constant#DIRECTION_LEFT}, {@link Constant#DIRECTION_TOP}, {@link Constant#DIRECTION_RIGHT}, {@link Constant#DIRECTION_BOTTOM}
+     * @param drawableWidth  The width of the drawable to display
+     * @param drawableHeight The height of the drawable to display
      */
     public static void setDrawableCompat(TextView view, @DrawableRes int drawableId, @Constant.Direction int direction, int drawableWidth, int drawableHeight) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -57,9 +58,9 @@ public final class TextViewUtil {
     }
 
     /**
-     * 将Drawables设置为显示在文本的左侧，上方，右侧和下方。
+     *  Set Drawables to display on the left, top, right, and bottom of the text.
      *
-     * @param direction 显示的位置，{@link Constant#DIRECTION_LEFT}、{@link Constant#DIRECTION_TOP}、{@link Constant#DIRECTION_RIGHT}、{@link Constant#DIRECTION_BOTTOM}
+     * @param direction  The location shown, {@link Constant#DIRECTION_LEFT}, {@link Constant#DIRECTION_TOP}, {@link Constant#DIRECTION_RIGHT}, {@link Constant#DIRECTION_BOTTOM}
      */
     public static void setDrawableWithIntrinsicBoundsCompat(TextView view, @DrawableRes int drawableId, @Constant.Direction int direction) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -70,9 +71,9 @@ public final class TextViewUtil {
     }
 
     /**
-     * 将Drawables设置为显示在文本的左侧，上方，右侧和下方。
+     *  Set Drawables to display on the left, top, right, and bottom of the text.
      *
-     * @param direction 显示的位置，{@link Constant#DIRECTION_LEFT}、{@link Constant#DIRECTION_TOP}、{@link Constant#DIRECTION_RIGHT}、{@link Constant#DIRECTION_BOTTOM}
+     * @param direction The location shown, {@link Constant#DIRECTION_LEFT}, {@link Constant#DIRECTION_TOP}, {@link Constant#DIRECTION_RIGHT}, {@link Constant#DIRECTION_BOTTOM}
      */
     public static void setDrawableWithIntrinsicBoundsCompat(TextView view, Drawable drawable, @Constant.Direction int direction) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -109,7 +110,7 @@ public final class TextViewUtil {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+    @SuppressLint("NewApi")
     private static void setDrawableRelative(TextView view, @DrawableRes int drawableId, @Constant.Direction int direction, int left, int top, int right, int bottom) {
         Drawable drawable = Resources.getSystem().getDrawable(drawableId);
         int width = right;
@@ -171,7 +172,7 @@ public final class TextViewUtil {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    @SuppressLint("NewApi")
     private static void setDrawableRelative(TextView view, @DrawableRes int drawableId, @Constant.Direction int direction) {
         switch (direction) {
             case DIRECTION_LEFT:
@@ -189,7 +190,7 @@ public final class TextViewUtil {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    @SuppressLint("NewApi")
     private static void setDrawableRelative(TextView view, Drawable drawable, @Constant.Direction int direction) {
         switch (direction) {
             case DIRECTION_LEFT:
