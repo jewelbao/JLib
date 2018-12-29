@@ -42,15 +42,6 @@ public final class PermissionUtil {
         }
     }
 
-    private void checkPermission(Activity context, String permission) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            int checkPermission = PermissionChecker.checkSelfPermission(context.getApplicationContext(), permission);
-            if (PackageManager.PERMISSION_GRANTED != checkPermission) {
-                disallowPermissions.add(permission);
-            }
-        }
-    }
-
     public void checkPermissionResult(@NonNull String[] permissions, @NonNull int[] grantResults, Runnable allowPermissionRunnable, Runnable disallowPermissionRunnable) {
         for (int i = 0; i < permissions.length; i++) {
             if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
@@ -65,6 +56,15 @@ public final class PermissionUtil {
         } else {
             if (disallowPermissionRunnable != null) {
                 disallowPermissionRunnable.run();
+            }
+        }
+    }
+
+    private void checkPermission(Activity context, String permission) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int checkPermission = PermissionChecker.checkSelfPermission(context.getApplicationContext(), permission);
+            if (PackageManager.PERMISSION_GRANTED != checkPermission) {
+                disallowPermissions.add(permission);
             }
         }
     }

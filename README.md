@@ -35,6 +35,8 @@ implementation('com.jewel.lib:JLib:1.0.10') {
  - [HandlerUtil][10]--简易的Handler UI线程调用工具
  - [SharedPre][11]--随存随取的SharedPre工具类，使用此工具需要在Application中先初始化
  - [live][12]--android lifecycle数据封装集合，简化接口类的数量，可与http请求的回调处理完美结合
+ - [ScreenAdapter][13]--屏幕适配，各类尺寸转换
+
  - 陆续收录中...
 
 ----------
@@ -82,3 +84,4 @@ limitations under the License.
   [10]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/HandlerUtil.java
   [11]: https://github.com/jewelbao/JLib/tree/master/JLib/src/main/java/com/jewel/lib/android/SharedPre.java
   [12]: https://github.com/jewelbao/JLib/blob/master/JLib/src/main/java/com/jewel/lib/android/live
+  [13]: https://github.com/jewelbao/JLib/blob/master/JLib/src/main/java/com/jewel/lib/android/ScreenAdapter.java
