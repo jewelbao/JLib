@@ -17,8 +17,6 @@ import android.widget.TextView;
 import com.jewel.lib.TAG;
 
 /**
- * 兼容新旧版本的方法集
- *
  * @author jewelbao
  * @version 1.0
  * @since 2016/9/1

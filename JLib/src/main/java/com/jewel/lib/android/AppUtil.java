@@ -55,7 +55,7 @@ public final class AppUtil {
     }
 
 
-    // app占用内存了解:https://blog.csdn.net/qq_23373271/article/details/73277390
+    // see:https://blog.csdn.net/qq_23373271/article/details/73277390
     public static void xx(Context context) throws IOException {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             StorageStatsManager statsManager = (StorageStatsManager) context.getSystemService(Context.STORAGE_STATS_SERVICE);

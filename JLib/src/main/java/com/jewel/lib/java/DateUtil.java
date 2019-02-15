@@ -6,9 +6,6 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
-/**
- * 日期工具
- */
 public class DateUtil {
 
     /**

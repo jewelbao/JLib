@@ -2,9 +2,6 @@ package com.jewel.lib.java;
 
 import java.math.BigDecimal;
 
-/**
- * 数字处理工具
- */
 public class DigitUtil {
 
     /**
