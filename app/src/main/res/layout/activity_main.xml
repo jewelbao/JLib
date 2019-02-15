@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recyclerView"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jewel.sample.MainActivity" />
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="控制"
+        android:onClick="test"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.jewel.sample.MainActivity" />
+</LinearLayout>

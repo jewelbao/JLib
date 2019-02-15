@@ -21,7 +21,7 @@ import android.view.View;
  * @since 2015/9/25
  */
 @SuppressWarnings("ALL")
-abstract class RecycleViewDivider extends RecyclerView.ItemDecoration{
+public abstract class RecycleViewDivider extends RecyclerView.ItemDecoration{
 
 	private static final int DEFAULT_SIZE = 2;
 	private static final int[] ATTRS = new int[] {android.R.attr.listDivider};

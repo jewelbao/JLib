@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jewel.lib" />
+    package="com.jewel.lib" >
+
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+</manifest>

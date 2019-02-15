@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.jewel.lib.android.CompatUtil;
 import com.jewel.lib.android.recyclerView.decoration.HorizontalDividerItemDecoration;
+import com.jewel.lib.android.recyclerView.decoration.RecycleViewDivider;
+import com.jewel.lib.android.recyclerView.decoration.VerticalDividerItemDecoration;
 
 /**
  * @author Jewel
@@ -35,7 +37,13 @@ public final class RecyclerViewUtil {
         Paint paint = new Paint();
         paint.setStrokeWidth(dividerWidth);
         paint.setColor(CompatUtil.getColor(context, colorRes));
-        view.addItemDecoration(new HorizontalDividerItemDecoration.Builder(context).paint(paint).build());
+        RecycleViewDivider divider;
+        if(horizontal) {
+            divider = new VerticalDividerItemDecoration.Builder(context).paint(paint).build();
+        } else {
+            divider = new HorizontalDividerItemDecoration.Builder(context).paint(paint).build();
+        }
+        view.addItemDecoration(divider);
 
         view.setAdapter(adapter);
     }
