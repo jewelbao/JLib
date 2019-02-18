@@ -1,7 +1,6 @@
 package com.jewel.sample;
 
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.jewel.lib.android.AppUtil;
 import com.jewel.lib.android.HandlerUtil;
 import com.jewel.lib.android.recyclerView.RecyclerViewUtil;
+import com.jewel.lib.android.recyclerView.SimpleAdapter;
 import com.jewel.lib.java.StringUtil;
 
 public class AppUtilActivity extends Activity {

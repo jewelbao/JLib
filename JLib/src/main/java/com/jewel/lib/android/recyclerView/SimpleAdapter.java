@@ -1,4 +1,4 @@
-package com.jewel.sample;
+package com.jewel.lib.android.recyclerView;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.LayoutRes;
