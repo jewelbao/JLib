@@ -48,7 +48,7 @@ public class HandlerUtil {
     /**
      * Remove any pending posts of Runnable r that are in the message queue.
      */
-    public static void removeRunable(Runnable runnable) {
+    public static void removeRunnable(Runnable runnable) {
         HANDLER.removeCallbacks(runnable);
     }
 
